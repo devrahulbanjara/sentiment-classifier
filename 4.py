@@ -1,5 +1,5 @@
 
-car_list = ['Toyota', 'Honda', 'Ford', 'Chevrolet', 'BMW', 'Mercedes']
+car_list = ['Toyota','BMW', 'Mercedes']
 try:
     guess = input("Guess the car model: ")
     if guess in car_list:
