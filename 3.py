@@ -11,6 +11,6 @@ def file_handling_example(file_path):
                 pass
 
     except (FileNotFoundError, PermissionError, EOFError) as e:
-        print(f"Error: {e}")
+        print(e)
 
 file_handling_example('your_file_path/your_file.txt')
