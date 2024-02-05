@@ -1,0 +1,5 @@
+===== Inquiry Form Data =====
+Name: Rahul
+Email: rd@gmail.com
+Inquiry: asda
+
