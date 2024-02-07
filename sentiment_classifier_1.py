@@ -6,5 +6,4 @@ def strip_punctuation(string_to_remove_punctuation):
             punctuation_removed = punctuation_removed.replace(char, '')
     return punctuation_removed
 
-print(strip_punctuation("''ab@"))
 
