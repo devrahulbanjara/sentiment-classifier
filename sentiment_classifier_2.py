@@ -1,6 +1,5 @@
 from sentiment_classifier_1 import *
 
-
 def get_pos(text_to_count):
     positive_words = []
     with open("positive_words.txt") as pos_f:
