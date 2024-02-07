@@ -65,6 +65,7 @@ def main():
                 net_score = positive_count - negative_count
 
                 write_file.write(f"{retweet_count},{reply_count},{positive_count},{negative_count},{net_score}\n")
-
+                print("Succeeded in writing the required data to resulting_data.csv")
+                
 if __name__ == "__main__":
     main()
