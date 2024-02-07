@@ -1,4 +1,10 @@
-punctuation_chars = ["'", '"', ",", ".", "!", ":", ";", '#', '@']
-with open("project_twitter_data.csv") as file:
-    data=file.read()
-    print(data)
+def strip_punctuation(string_to_remove_punctuation):
+    punctuation_chars = ["'", '"', ",", ".", "!", ":", ";", '#', '@']
+    punctuation_removed = string_to_remove_punctuation
+    for char in string_to_remove_punctuation:
+        if char in punctuation_chars:
+            punctuation_removed = punctuation_removed.replace(char, '')
+    return punctuation_removed
+
+print(strip_punctuation("''ab@"))
+
