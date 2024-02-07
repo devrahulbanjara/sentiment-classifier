@@ -1,5 +1,3 @@
-'''# sentiment_classifier_4.py'''
-
 def strip_punctuation(string_to_remove_punctuation):
     """
     Remove punctuation characters from a string.
@@ -53,20 +51,20 @@ def main():
     Analyze sentiment of Twitter data and write results to CSV.
     """
     with open("project_twitter_data.csv", encoding="utf-8") as read_file, open("resulting_data.csv", 'w', encoding="utf-8") as write_file:
-        write_file.write("Number of Retweets,Number of Replies,Positive Score,Negative Score,Net Score\n")
+        next(read_file)
+        write_file.write("Tweet Text,Number of Retweets,Number of Replies,Positive Score,Negative Score,Net Score\n")
         for line in read_file:
             splitted_columns = line.strip().split(",")
-            tweet_text = splitted_columns[0]
-            retweet_count = splitted_columns[1]
-            reply_count = splitted_columns[2]
+            if len(splitted_columns) == 3:
+                tweet_text = splitted_columns[0]
+                retweet_count = splitted_columns[1]
+                reply_count = splitted_columns[2]
 
-            positive_count = get_pos(tweet_text)
-            negative_count = get_neg(tweet_text)
-            net_score = positive_count - negative_count
+                positive_count = get_pos(tweet_text)
+                negative_count = get_neg(tweet_text)
+                net_score = positive_count - negative_count
 
-            write_file.write(f"{retweet_count},{reply_count},{positive_count},{negative_count},{net_score}\n")
+                write_file.write(f"{retweet_count},{reply_count},{positive_count},{negative_count},{net_score}\n")
 
 if __name__ == "__main__":
     main()
-
-                
