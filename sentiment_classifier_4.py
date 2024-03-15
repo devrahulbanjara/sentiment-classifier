@@ -1,7 +1,4 @@
 def strip_punctuation(string_to_remove_punctuation):
-    """
-    Remove punctuation characters from a string.
-    """
     punctuation_chars = ["'", '"', ",", ".", "!", ":", ";", '#', '@']
     punctuation_removed = string_to_remove_punctuation.strip()
     for char in string_to_remove_punctuation:
@@ -11,9 +8,6 @@ def strip_punctuation(string_to_remove_punctuation):
 
 
 def get_pos(text_to_count):
-    """
-    Count the occurrences of positive words in a text string.
-    """
     positive_words = []
     with open("positive_words.txt", encoding="utf-8") as pos_f:
         for lin in pos_f:
@@ -29,9 +23,6 @@ def get_pos(text_to_count):
 
 
 def get_neg(text_to_count):
-    """
-    Count the occurrences of negative words in a text string.
-    """
     negative_words = []
     with open("negative_words.txt", encoding="utf-8") as neg_f:
         for lin in neg_f:
@@ -47,9 +38,6 @@ def get_neg(text_to_count):
 
 
 def main():
-    """
-    Analyze sentiment of Twitter data and write results to CSV.
-    """
     with open("project_twitter_data.csv", encoding="utf-8") as read_file, open("resulting_data.csv", 'w', encoding="utf-8") as write_file:
         next(read_file)
         write_file.write("Tweet Text,Number of Retweets,Number of Replies,Positive Score,Negative Score,Net Score\n")
